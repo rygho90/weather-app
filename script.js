@@ -1,5 +1,6 @@
 const cityInput = document.querySelector('[data-city-name]')
-const searchButton = document.querySelector('[data-search-button]')
+const getWeatherButton = document.querySelector('[data-get-weather-button]')
+const getWeatherForm = document.querySelector('[data-get-weather-form]')
 
 function getWeather(cityName) {
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=4563e2706edeb31a8842a408ad31a05e`,
@@ -13,9 +14,14 @@ function getWeather(cityName) {
     })
 }
 
-searchButton.addEventListener("click", () => {
+getWeatherButton.addEventListener("click", () => {
     const cityName = cityInput.value
     if (cityName == null || cityName == '') return
     getWeather(cityName)
+})
+
+getWeatherForm.addEventListener('submit', e => {
+    e.preventDefault();
+    console.log('beep')
 })
 

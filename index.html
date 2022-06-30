@@ -9,8 +9,65 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <label for="city">Enter a city name:</label>
-    <input type="text" id="city" name="city" data-city-name>
-    <button data-search-button>Search</button>
+    <h1 class="title">RyTower Weather Radar</h1>
+
+    <div class="get-weather-container">
+        <h3 class="container-title">Enter your location:</h2>
+        <form action="" data-get-weather-form>
+            <input 
+              type="text"
+              class="search-text"
+              placeholder="City (required)"
+              size="15"
+              required
+              data-city-name
+            />
+
+            <input 
+              type="text"
+              class="search-text"
+              placeholder="State (optional)"
+              size="15"
+              data-state-name
+            />
+
+            <input 
+              type="text"
+              class="search-text"
+              placeholder="Country (optional)"
+              size="15"
+              data-country-name
+            />
+
+            <button data-get-weather-button>Get Weather</button>
+        </form>
+    </div>
+
+    <div class="content-container">
+        <h2 class="location-title">Ryville, USA</h2>
+        <div class="gif-div">
+            <img src="#" alt="the current weather">
+        </div>
+        <h3 class="container-title">Live Look</h3>
+        <div class="info-grid">
+            <div class="info-box">
+                <h3 class="container-title">Temperature:</h3>
+                <div class="info-text"></div>
+            </div>
+            <div class="info-box">
+                <h3 class="container-title">Humidity:</h3>
+                <div class="info-text"></div>
+            </div>
+            <div class="info-box">
+                <h3 class="container-title">Feels Like:</h3>
+                <div class="info-text"></div>
+            </div>
+            <div class="info-box">
+                <h3 class="container-title">Wind:</h3>
+                <div class="info-text"></div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
