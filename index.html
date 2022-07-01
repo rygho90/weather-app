@@ -11,39 +11,40 @@
 <body>
     <h1 class="title">RyTower Weather Radar</h1>
 
-    <div class="get-weather-container hidden">
+    <div class="get-weather-container ">
         <h3 class="container-title">Enter your location:</h2>
-        <form action="" data-get-weather-form>
-            <input 
-              type="text"
-              class="search-text"
-              placeholder="City (required)"
-              size="15"
-              required
-              data-city-name
-            />
-
-            <input 
-              type="text"
-              class="search-text"
-              placeholder="State (optional)"
-              size="15"
-              data-state-name
-            />
-
-            <input 
-              type="text"
-              class="search-text"
-              placeholder="Country (optional)"
-              size="15"
-              data-country-name
-            />
-
-            <button data-get-weather-button>Get Weather</button>
-        </form>
+        <div class="form-container">
+            <form action="" data-get-weather-form>
+                <div class="inner-form-container">
+                    <input
+                        type="text"
+                        class="search-text"
+                        placeholder="City (required)"
+                        size="15"
+                        required
+                        data-city-name
+                    />
+                    <input
+                        type="text"
+                        class="search-text"
+                        placeholder="State (optional)"
+                        size="15"
+                        data-state-name
+                    />
+                    <input
+                        type="text"
+                        class="search-text"
+                        placeholder="Country (optional)"
+                        size="15"
+                        data-country-name
+                    />
+                    <button data-get-weather-button>Get Weather</button>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <div class="content-container">
+    <div class="content-container hidden">
         <div class="content-title-box">
             <h2 class="location-title">Ryville, USA</h2>
             <div class="gif-div">

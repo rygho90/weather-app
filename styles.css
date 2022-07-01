@@ -1,44 +1,89 @@
 :root {
-    --clr-primary: rgb(240, 240, 240);
-    --clr-border: rgb(219, 219, 219);
+  --clr-primary: rgb(240, 240, 240);
+  --clr-border: rgb(219, 219, 219);
 }
 
 *,
 *::before,
 *::after {
-    font-family: inheirt;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  font-family: inheirt;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--clr-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--clr-primary);
 }
 
 .title {
-    margin-bottom: 15px;
-    font-style: italic;
+  margin-bottom: 15px;
+  font-style: italic;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+.get-weather-container {
+  height: 581px;
+  width: 342px;
+  border: solid 1px var(--clr-border);
+  border-radius: 2%;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.get-weather-container .container-title {
+  margin-top: 70px;
+}
+
+.form-container {
+  margin: auto;
+  height: 400px;
+}
+
+.inner-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.inner-form-container input {
+  height: 30px;
+  width: 200px;
+  margin: 0 auto 40px;
+  font-size: 15px;
+  padding: 5px;
+  background-color: var(--clr-primary);
+  border: solid 1px var(--clr-border);
+}
+
+.inner-form-container button {
+  height: 30px;
+  width: 200px;
+  margin: 0 auto 40px;
+  font-size: 15px;
 }
 
 .content-container {
-    border: solid 1px var(--clr-border);
-    border-radius: 2%;
-    padding: 15px;
-    background-color: white;
+  border: solid 1px var(--clr-border);
+  border-radius: 2%;
+  padding: 15px;
+  background-color: white;
 }
 
 .content-title-box {
-    text-align: center;
+  text-align: center;
 }
 
 .weather-description {
@@ -46,21 +91,21 @@ body {
 }
 
 .info-grid {
-    width: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .info-box {
-    background-color: transparent;
-    width: 150px;
-    height: 150px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-    border: solid 1px var(--clr-border);
-    border-radius: 2%;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  border: solid 1px var(--clr-border);
+  border-radius: 2%;
   }
   
 /* This container is needed to position the front and back side */
@@ -104,6 +149,7 @@ body {
 }
 
 .container-title {
+  text-align: center;
   margin-top: 5px;
 }
 
