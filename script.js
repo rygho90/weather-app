@@ -1,27 +1,57 @@
 const cityInput = document.querySelector('[data-city-name]')
 const getWeatherButton = document.querySelector('[data-get-weather-button]')
 const getWeatherForm = document.querySelector('[data-get-weather-form]')
+const getWeatherContainer = document.querySelector('[data-get-weather-container]')
+
+const contentContainer = document.querySelector('[data-content-container]')
+const locationTitle = document.querySelector('[data-location-title]')
+const weatherDescription = document.querySelector('[data-weather-description]')
+const fahrenheitSpan = document.querySelector('[data-fahrenheit]')
+const celsiusSpan = document.querySelector('[data-celsius]')
+const humiditySpan = document.querySelector('[data-humidity]')
+const fahrenheitFeelsSpan = document.querySelector('[data-fahrenheit-feels]')
+const celsiusFeelsSpan = document.querySelector('[data-celsius-feels]')
+const windSpan = document.querySelector('[data-wind]')
 
 function getWeather(cityName) {
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=4563e2706edeb31a8842a408ad31a05e`,
     {mode: 'cors'})
     .then(response => response.json())
     .then(response => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${response[0].lat}&lon=${response[0].lon}&appid=4563e2706edeb31a8842a408ad31a05e`,
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${response[0].lat}&lon=${response[0].lon}&appid=4563e2706edeb31a8842a408ad31a05e&units=imperial`,
         {mode: 'cors'})
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(data => renderData(data))
     })
 }
 
-getWeatherButton.addEventListener("click", () => {
-    const cityName = cityInput.value
-    if (cityName == null || cityName == '') return
-    getWeather(cityName)
-})
+function searchForWeather() {
+    const cityName = cityInput.value.trim()
+    if (!cityName) return
+    getWeather(cityName)    
+    getWeatherContainer.style.display = "none"
+    contentContainer.classList.remove('hidden')
+}
+
+function renderData(data) {
+    console.log(data);
+    locationTitle.textContent = data.name
+    weatherDescription.textContent = data.weather[0].description
+    fahrenheitSpan.textContent = Math.round(data.main.temp)
+    celsiusSpan.textContent = Math.round(toCelsius(data.main.temp))
+    humiditySpan.textContent = data.main.humidity
+    fahrenheitFeelsSpan.textContent = Math.round(data.main.feels_like)
+    celsiusFeelsSpan.textContent = Math.round(toCelsius(data.main.feels_like))
+    windSpan.textContent = Math.round(data.wind.speed)
+}
+
+function toCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 0.556
+}
 
 getWeatherForm.addEventListener('submit', e => {
     e.preventDefault();
-    console.log('beep')
+    searchForWeather();
+    cityInput.value = ''
 })
 

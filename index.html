@@ -11,7 +11,7 @@
 <body>
     <h1 class="title">RyTower Weather Radar</h1>
 
-    <div class="get-weather-container ">
+    <div class="get-weather-container" data-get-weather-container>
         <h3 class="container-title">Enter your location:</h2>
         <div class="form-container">
             <form action="" data-get-weather-form>
@@ -44,13 +44,13 @@
         </div>
     </div>
 
-    <div class="content-container hidden">
+    <div class="content-container hidden" data-content-container>
         <div class="content-title-box">
-            <h2 class="location-title">Ryville, USA</h2>
+            <h2 class="location-title" data-location-title>Ryville, USA</h2>
             <div class="gif-div">
                 <img src="#" alt="the current weather">
             </div>
-            <h3 class="weather-description">Live Look</h3>
+            <h3 class="weather-description" data-weather-description>Live Look</h3>
         </div>
         <div class="info-grid">
 
@@ -58,11 +58,11 @@
                 <div class="info-box-inner">
                     <div class="info-box-front">
                         <h3 class="container-title">Temperature:</h3>
-                        <div class="info-text"><span class="big-info">90</span>&#8457;</div>
+                        <div class="info-text"><span class="big-info" data-fahrenheit>90</span>&#8457;</div>
                     </div>
                     <div class="info-box-back">
                         <h3 class="container-title">Temperature:</h3>
-                        <div class="info-text"><span class="big-info">90</span>&#8451;</div>
+                        <div class="info-text"><span class="big-info" data-celsius>90</span>&#8451;</div>
                     </div>
                 </div>
             </div>
@@ -71,11 +71,7 @@
                 <div class="info-box-inner">
                     <div class="info-box-front">
                         <h3 class="container-title">Humidity:</h3>
-                        <div class="info-text"><span class="big-info">90</span>%</div>
-                    </div>
-                    <div class="info-box-back">
-                        <h3 class="container-title">Temperature:</h3>
-                        <div class="info-text"><span class="big-info">90</span>&#8451;</div>
+                        <div class="info-text"><span class="big-info" data-humidity>90</span>%</div>
                     </div>
                 </div>
             </div>
@@ -84,11 +80,11 @@
                 <div class="info-box-inner">
                     <div class="info-box-front">
                         <h3 class="container-title">Feels Like:</h3>
-                        <div class="info-text"><span class="big-info">90</span>&#8457;</div>
+                        <div class="info-text"><span class="big-info" data-fahrenheit-feels>90</span>&#8457;</div>
                     </div>
                     <div class="info-box-back">
                         <h3 class="container-title">Feels Like:</h3>
-                        <div class="info-text"><span class="big-info">90</span>&#8451;</div>
+                        <div class="info-text"><span class="big-info" data-celsius-feels>90</span>&#8451;</div>
                     </div>
                 </div>
             </div>
@@ -97,10 +93,10 @@
                 <div class="info-box-inner">
                     <div class="info-box-front">
                         <h3 class="container-title">Wind:</h3>
-                        <div class="info-text"><span class="big-info">90</span>mph</div>
+                        <div class="info-text"><span class="big-info" data-wind>90</span>mph</div>
                     </div>
                     <div class="info-box-back">
-                        <h3 class="container-title">Temperature:</h3>
+                        <h3 class="container-title">Wind:</h3>
                         <div class="info-text"><span class="big-info">90</span>&#8451;</div>
                     </div>
                 </div>

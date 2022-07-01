@@ -88,6 +88,7 @@ body {
 
 .weather-description {
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .info-grid {
@@ -118,10 +119,11 @@ body {
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+/* Do an horizontal flip when you move the mouse over the flip box container 
 .info-box:hover .info-box-inner {
   transform: rotateY(180deg);
 }
+*/
 
 /* Position the front and back side */
 .info-box-front, .info-box-back {
