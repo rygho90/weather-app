@@ -22,7 +22,7 @@ body {
 }
 
 .title {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-style: italic;
 }
 
@@ -41,6 +41,10 @@ body {
     text-align: center;
 }
 
+.weather-description {
+  margin-bottom: 10px;
+}
+
 .info-grid {
     width: auto;
     display: grid;
@@ -52,45 +56,66 @@ body {
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .info-box {
     background-color: transparent;
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     border: solid 1px var(--clr-border);
     border-radius: 2%;
   }
   
-  /* This container is needed to position the front and back side */
-  .info-box-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  .info-box:hover .info-box-inner {
-    transform: rotateY(180deg);
-  }
-  
-  /* Position the front and back side */
-  .info-box-front, .info-box-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-  }
-  
-  /* Style the front side (fallback if image is missing) */
-  .info-box-front {
-    background-color: var(--clr-primary);
-    color: black;
-  }
-  
-  /* Style the back side */
-  .info-box-back {
-    background-color: var(--clr-primary);
-    transform: rotateY(180deg);
-  }
+/* This container is needed to position the front and back side */
+.info-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.info-box:hover .info-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.info-box-front, .info-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.info-box-front {
+  background-color: var(--clr-primary);
+  color: black;
+}
+
+/* Style the back side */
+.info-box-back {
+  background-color: var(--clr-primary);
+  transform: rotateY(180deg);
+}
+
+.big-info {
+  font-size: 4rem;
+}
+
+.container-title {
+  margin-top: 5px;
+}
+
+.info-text {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.gif-div {
+  height: 175px;
+  width: 175px;
+  border: solid 1px var(--clr-border);
+  margin: auto;
+  margin-top: 5px;
+}
