@@ -22,8 +22,14 @@ body {
 }
 
 .title {
-  margin-bottom: 15px;
+  margin-bottom: 3px;
   font-style: italic;
+  border: solid 1px var(--clr-border);
+  border-radius: 5px;
+  background-color: white;
+  width: 342px;
+  text-align: center;
+  padding: 3px;
 }
 
 .hidden {
@@ -166,4 +172,27 @@ body {
   border: solid 1px var(--clr-border);
   margin: auto;
   margin-top: 5px;
+}
+
+.footer {
+  margin-top: 3px;
+  border: solid 1px var(--clr-border);
+  border-radius: 5px;
+  background-color: white;
+  width: 342px;
+  text-align: center;
+  padding: 3px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  margin: 0 10px 0 10px;
+}
+
+.footer-links li {
+  list-style: none;
+  text-decoration: none;
+  font-size: 0.9rem;
 }

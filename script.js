@@ -2,6 +2,7 @@ const cityInput = document.querySelector('[data-city-name]')
 const getWeatherButton = document.querySelector('[data-get-weather-button]')
 const getWeatherForm = document.querySelector('[data-get-weather-form]')
 const getWeatherContainer = document.querySelector('[data-get-weather-container]')
+const homeFooter = document.querySelector('[data-home-footer]')
 
 const contentContainer = document.querySelector('[data-content-container]')
 const locationTitle = document.querySelector('[data-location-title]')
@@ -12,6 +13,7 @@ const humiditySpan = document.querySelector('[data-humidity]')
 const fahrenheitFeelsSpan = document.querySelector('[data-fahrenheit-feels]')
 const celsiusFeelsSpan = document.querySelector('[data-celsius-feels]')
 const windSpan = document.querySelector('[data-wind]')
+const contentFooter = document.querySelector('[data-content-footer]')
 
 function getWeather(cityName) {
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=4563e2706edeb31a8842a408ad31a05e`,
@@ -31,6 +33,8 @@ function searchForWeather() {
     getWeather(cityName)    
     getWeatherContainer.style.display = "none"
     contentContainer.classList.remove('hidden')
+    homeFooter.style.display = "none"
+    contentFooter.classList.remove('hidden')
 }
 
 function renderData(data) {
