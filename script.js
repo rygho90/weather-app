@@ -8,10 +8,8 @@ const contentContainer = document.querySelector('[data-content-container]')
 const locationTitle = document.querySelector('[data-location-title]')
 const weatherDescription = document.querySelector('[data-weather-description]')
 const fahrenheitSpan = document.querySelector('[data-fahrenheit]')
-const celsiusSpan = document.querySelector('[data-celsius]')
 const humiditySpan = document.querySelector('[data-humidity]')
 const fahrenheitFeelsSpan = document.querySelector('[data-fahrenheit-feels]')
-const celsiusFeelsSpan = document.querySelector('[data-celsius-feels]')
 const windSpan = document.querySelector('[data-wind]')
 const weatherImg = document.querySelector('[data-weather-img]')
 
@@ -73,6 +71,10 @@ getWeatherForm.addEventListener('submit', e => {
 refreshButton.addEventListener('click', () => {
     const cityName = cityInput.value.trim()
     getWeather(cityName)
+})
+
+imperialMetricButton.addEventListener('click', () => {
+
 })
 
 newLocationButton.addEventListener('click', () => {
