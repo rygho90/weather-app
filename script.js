@@ -21,7 +21,7 @@ const refreshButton = document.querySelector('[data-refresh]')
 const newLocationButton = document.querySelector('[data-new-location]')
 
 function getWeather(cityName) {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=4563e2706edeb31a8842a408ad31a05e`,
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=4563e2706edeb31a8842a408ad31a05e`,
     {mode: 'cors'})
     .then(response => response.json())
     .then(response => {
