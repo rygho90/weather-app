@@ -93,6 +93,7 @@ body {
 }
 
 .weather-description {
+  margin-top: 5px;
   margin-bottom: 10px;
   text-transform: capitalize;
 }
@@ -166,12 +167,18 @@ body {
   font-size: 2rem;
 }
 
-.gif-div {
+.img-div {
   height: 175px;
   width: 175px;
   border: solid 1px var(--clr-border);
   margin: auto;
   margin-top: 5px;
+}
+
+img {
+  height: 175px;
+  width: 175px;
+  object-fit: cover;
 }
 
 .footer {
@@ -182,6 +189,7 @@ body {
   width: 342px;
   text-align: center;
   padding: 3px;
+  font-size: 0.9rem;
 }
 
 .footer-links {
@@ -191,8 +199,14 @@ body {
   margin: 0 10px 0 10px;
 }
 
-.footer-links li {
+.footer-link {
   list-style: none;
   text-decoration: none;
-  font-size: 0.9rem;
+  
+
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
 }
