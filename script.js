@@ -13,8 +13,12 @@ const humiditySpan = document.querySelector('[data-humidity]')
 const fahrenheitFeelsSpan = document.querySelector('[data-fahrenheit-feels]')
 const celsiusFeelsSpan = document.querySelector('[data-celsius-feels]')
 const windSpan = document.querySelector('[data-wind]')
-const contentFooter = document.querySelector('[data-content-footer]')
 const weatherImg = document.querySelector('[data-weather-img]')
+
+const contentFooter = document.querySelector('[data-content-footer]')
+const imperialMetricButton = document.querySelector('[data-imperial-metric]')
+const refreshButton = document.querySelector('[data-refresh]')
+const newLocationButton = document.querySelector('[data-new-location]')
 
 function getWeather(cityName) {
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=4563e2706edeb31a8842a408ad31a05e`,
@@ -48,7 +52,7 @@ function renderData(data) {
     fahrenheitFeelsSpan.textContent = Math.round(data.main.feels_like)
     celsiusFeelsSpan.textContent = Math.round(toCelsius(data.main.feels_like))
     windSpan.textContent = Math.round(data.wind.speed)
-    renderGif(data.weather[0].description)
+    renderGif(`${data.weather[0].main} weather`)
 }
 
 function toCelsius(fahrenheit) {
@@ -56,14 +60,26 @@ function toCelsius(fahrenheit) {
 }
 
 function renderGif(searchTerm) {
-    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=dvS423pJg2AmQ1zvJnZZpgtQdaB3DUc6&s=${searchTerm}`, {mode: 'cors'})
+    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=dvS423pJg2AmQ1zvJnZZpgtQdaB3DUc6&s=${searchTerm}&weirdness=0`, {mode: 'cors'})
     .then(response => response.json())
     .then(gif => weatherImg.src = gif.data.images.original.url)
-  }
+}
 
 getWeatherForm.addEventListener('submit', e => {
     e.preventDefault();
     searchForWeather();
+})
+
+refreshButton.addEventListener('click', () => {
+    const cityName = cityInput.value.trim()
+    getWeather(cityName)
+})
+
+newLocationButton.addEventListener('click', () => {
     cityInput.value = ''
+    getWeatherContainer.style.display = "flex"
+    contentContainer.classList.add('hidden')
+    homeFooter.style.display = "block"
+    contentFooter.classList.add('hidden')
 })
 
