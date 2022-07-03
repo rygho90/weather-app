@@ -45,10 +45,10 @@ function renderData(data) {
     locationTitle.textContent = data.name
     weatherDescription.textContent = data.weather[0].description
     fahrenheitSpan.textContent = Math.round(data.main.temp)
-    celsiusSpan.textContent = Math.round(toCelsius(data.main.temp))
+    // celsiusSpan.textContent = Math.round(toCelsius(data.main.temp))
     humiditySpan.textContent = data.main.humidity
     fahrenheitFeelsSpan.textContent = Math.round(data.main.feels_like)
-    celsiusFeelsSpan.textContent = Math.round(toCelsius(data.main.feels_like))
+    // celsiusFeelsSpan.textContent = Math.round(toCelsius(data.main.feels_like))
     windSpan.textContent = Math.round(data.wind.speed)
     renderGif(`${data.weather[0].main} weather`)
 }
